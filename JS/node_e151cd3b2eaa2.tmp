@@ -1,0 +1,2 @@
+str = "welcome pig"
+console.log(str)

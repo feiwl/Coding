@@ -1,0 +1,117 @@
+Metadata-Version: 1.1
+Name: pyandoc
+Version: 0.2.0
+Summary: Python wrapper for Pandoc - the universal document converter
+Home-page: http://github.com/kennethreitz/pyandoc
+Author: Kenneth Reitz
+Author-email: me@kennethreitz.com
+License: MIT
+Description: Pyandoc: a simple Pandoc wrapper for Python
+        
+        
+        Requirements
+        ++++++++++++
+        
+        * Pandoc
+        
+        
+        Usage
+        +++++
+        
+        Get setup.
+        
+        .. code-block:: python
+        
+        	import pandoc
+        
+        	# pandoc.PANDOC_PATH = '/usr/bin/pandoc'
+        
+        
+        Let's start with a Markdown document:
+        
+        .. code-block:: python
+        
+        	doc = pandoc.Document()
+        	doc.markdown = '''
+        	# I am an H1 Tag
+        
+        	* bullet point
+        	* more points
+        	* point with [link](http://kennethreitz.com)!
+        	'''
+        
+        Now let's convert that into a ReST document: ::
+        
+        	>>> print doc.rst
+        
+        	I am an H1 Tag
+        	==============
+        
+        
+        	-  bullet point
+        	-  more points
+        	-  point with `link <http://kennethreitz.com>`_!
+        
+        Formats available:
+        	- asciidoc
+        	- beamer
+        	- commonmark
+        	- context
+        	- docbook
+        	- doc- x
+        	- dokuwiki
+        	- dzslides
+        	- epub
+        	- epub3
+        	- fb2
+        	- haddock
+        	- html
+        	- html5
+        	- icml
+        	- json (pandoc's AST)
+        	- latex
+        	- man
+        	- markdown
+        	- markdown_github
+        	- markdown_mmd
+        	- markdown_phpextra
+        	- markdown_strict
+        	- mediawiki
+        	- native
+        	- odt
+        	- opendocument
+        	- opml
+        	- org
+        	- pdf
+        	- plain
+        	- revealjs
+        	- rst
+        	- rtf
+        	- s5,
+        	- slideous
+        	- slidy
+        	- texinfo
+        	- textile
+        
+        Enjoy.
+        
+        
+        v 0.0.1 (01-02-2010)
+        ++++++++++++++++++++
+        
+        * Initial release
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.0
+Classifier: Programming Language :: Python :: 3.1
+Classifier: Programming Language :: Python :: 3.2
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5

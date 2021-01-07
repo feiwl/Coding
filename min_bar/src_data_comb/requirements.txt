@@ -1,0 +1,34 @@
+requirements for the root data
+0: the input is begin_date, end_date, target_time
+    the begin date and end date is the range for B date, be careful about the range for A date
+1. stock_id(str), date(str) are unique for each row
+2. each row is a record for one stock at one date, columns are basic values like open, high, low, etc
+3. most of the date type should be int64, except that
+    stock_id, str
+    date, str
+    adj_factor, float64
+    float_volume, float64
+4. currently, the root data has three source
+    a. daily data: high_low_limit, float_volume, adj_factor, stock_status
+    b. stock new EOD data: regenerate from stock transaction minute data, including A and B date value
+    c. index new EOD data: regenerate from index snapshot minute data, including A and B date value, index data only
+    conclude open, high, low, close, amount
+5. root data structure
+    stock_id, date_A, date_A_stock_EOD, date_B, date_B_stock_EOD, index_A_EOD, index_B_EOD, daily_stock_A, daily_stock_B
+
+    so the merge steps should be as follows:
+    merge dataframe 4.a and 4.b by stock id and date A, merge dataframe 4.a and 4.b by stock id and date B
+    merge dataframe 4.b and 4.c by date A, merge dataframe 4.b and 4.c by date B
+
+6. be careful about the name of the columns, specify index and stock ,A date value and B date value, no duplicate!
+7. depends on the requirements in the future, it can either return a list of dataframes, each one is the record of one
+    stock, or return a dataframe including all stocks
+
+
+steps:
+1.  get minute data prepared, store them in your own folder
+2.  give the code of trade_status to 费文龙, teach him how to use it. let him do the daily computation, and ask him for
+    the path where you can check it, both in windows and linux
+3.  summarize those data, complete the root_data.py
+
+Feel free to ask me if there is anything that is not so clear!

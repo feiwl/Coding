@@ -1,0 +1,11 @@
+pyyaml
+click
+
+[pypi]
+docutils
+Pygments
+
+[test]
+pandocfilters
+configparser
+pytest-cov

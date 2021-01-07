@@ -1,0 +1,21 @@
+{
+    "strategyConfigs": {
+        "amk": {
+            "IC2101": {
+                "maxOrderSize": "20",
+                "maxPosition": "10",
+                "placeThrough": "20"
+            },
+            "IF2101": {
+                "maxOrderSize": "20",
+                "maxPosition": "10",
+                "placeThrough": "20"
+            },
+            "ss2109": {
+                "maxOrderSize": "20",
+                "maxPosition": "10",
+                "placeThrough": "20"
+            }
+        }
+    }
+}
